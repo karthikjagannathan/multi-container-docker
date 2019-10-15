@@ -14,7 +14,8 @@ after_success:
   - docker build -t karthikjag/complex-server -f ./server
   - docker build -t karthikjag/complex-worker -f ./worker
   # docker CLI login
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
   # push images to docker hub
   - docker push karthikjag/complex-client
   - docker push karthikjag/complex-ngnix
