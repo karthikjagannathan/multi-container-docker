@@ -9,15 +9,15 @@ script:
   - docker run -e CI=true karthikjag/react-test npm run test
 
 after_success:
-  - docker build -t karthikjag/multi-client -f ./client
-  - docker build -t karthikjag/multi-ngnix -f ./ngnix
-  - docker build -t karthikjag/multi-server -f ./server
-  - docker build -t karthikjag/multi-worker -f ./worker
+  - docker build -t karthikjag/complex-ngnix -f ./ngnix
+  - docker build -t karthikjag/complex-client -f ./client
+  - docker build -t karthikjag/complex-server -f ./server
+  - docker build -t karthikjag/complex-worker -f ./worker
   # docker CLI login
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to docker hub
-  - docker push karthikjag/multi-client
-  - docker push karthikjag/multi-ngnix
-  - docker push karthikjag/multi-server
-  - docker push karthikjag/multi-worker
+  - docker push karthikjag/complex-client
+  - docker push karthikjag/complex-ngnix
+  - docker push karthikjag/complex-server
+  - docker push karthikjag/complex-worker
   
