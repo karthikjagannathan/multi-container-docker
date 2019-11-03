@@ -18,7 +18,7 @@ after_success:
   - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
   # push images to docker hub
   - docker push karthikjag/complex-client
-  - docker push karthikjag/complex-ngnix
+  - docker push karthikjag/complex-nginx
   - docker push karthikjag/complex-server
   - docker push karthikjag/complex-worker
   
