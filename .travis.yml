@@ -9,10 +9,10 @@ script:
   - docker run -e CI=true karthikjag/react-test npm run test
 
 after_success:
-  - docker build -t karthikjag/complex-ngnix -f ./ngnix
-  - docker build -t karthikjag/complex-client -f ./client
-  - docker build -t karthikjag/complex-server -f ./server
-  - docker build -t karthikjag/complex-worker -f ./worker
+  - docker build -t karthikjag/complex-ngnix ./ngnix
+  - docker build -t karthikjag/complex-client ./client
+  - docker build -t karthikjag/complex-server ./server
+  - docker build -t karthikjag/complex-worker ./worker
   # docker CLI login
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
