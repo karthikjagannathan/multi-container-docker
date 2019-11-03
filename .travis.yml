@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true karthikjag/react-test npm run test
 
 after_success:
-  - docker build -t karthikjag/complex-ngnix ./ngnix
+  - docker build -t karthikjag/complex-nginx ./nginx
   - docker build -t karthikjag/complex-client ./client
   - docker build -t karthikjag/complex-server ./server
   - docker build -t karthikjag/complex-worker ./worker
